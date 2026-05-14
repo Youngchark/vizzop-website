@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Vizzop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue: #0033FF;
+      --white: #ffffff;
+      --black: #080808;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 52px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: rgba(8,8,8,0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .nav-logo {
+      font-family: 'Alfa Slab One', serif;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      color: var(--blue);
+      text-decoration: none;
+      line-height: 1;
+    }
+    nav ul { display: flex; gap: 36px; list-style: none; }
+    nav a {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* ── STORY ── */
+    .story-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 160px 64px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(0,51,255,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .story-inner {
+      max-width: 680px;
+      position: relative;
+      z-index: 1;
+    }
+    .story-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
+    }
+    .story-text {
+      font-size: 19px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.75);
+    }
+    .story-text p {
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .story-text p:nth-child(1) { animation-delay: 0.35s; }
+    .story-text p:nth-child(2) { animation-delay: 0.5s; }
+    .story-text p:nth-child(3) { animation-delay: 0.65s; }
+    .story-text p:nth-child(4) { animation-delay: 0.8s; }
+    .story-text p + p { margin-top: 28px; }
+    .story-text strong {
+      color: #fff;
+      font-weight: 400;
+    }
+    .story-cta {
+      margin-top: 52px;
+      opacity: 0;
+      animation: rise 0.7s cubic-bezier(0.16,1,0.3,1) 0.95s forwards;
+    }
+    .story-cta a {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 28px;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .story-cta a:hover { background: #001fd6; transform: translateY(-2px); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      padding: 32px 64px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .page-footer p {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.18);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">VIZZOP</a>
+  <ul>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#features">Features</a></li>
+    <li><a href="index.html#demo">Demo</a></li>
+    <li><a href="index.html#pricing">Pricing</a></li>
+    <li><a href="mailto:info@getvizzop.com">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="story-section">
+  <div class="story-inner">
+    <p class="story-label">From the Founder</p>
+    <div class="story-text">
+      <p>Called a med spa to book an appointment. <strong>No answer.</strong> Called again later. Same thing. So I booked somewhere else in 30 seconds and moved on.</p>
+      <p>That clinic likely never knew they lost me. No alert. No follow-up. Just missed revenue walking out the door.</p>
+      <p>It made me think — <strong>how many bookings disappear like that every week?</strong></p>
+      <p>So I built Vizzop. An AI receptionist that answers every call, books directly into your calendar, and handles reschedules and cancellations. <strong>24/7. No missed calls. No voicemail gaps. No lost bookings.</strong> Building from New Zealand, solving a problem I kept running into.</p>
+    </div>
+    <div class="story-cta">
+      <a href="mailto:info@getvizzop.com?subject=I%20want%20Vizzop%20for%20my%20clinic&body=Hi%20there%2C%0A%0AI%20just%20saw%20the%20Vizzop%20demo%20and%20I%27m%20interested%20in%20getting%20this%20set%20up%20for%20my%20clinic.%0A%0AClinic%20name%3A%20%0ALocation%3A%20%0ABest%20time%20to%20chat%3A%20%0A%0ALooking%20forward%20to%20hearing%20from%20you!">Get Vizzop for My Clinic →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="page-footer">
+  <p>© 2026 Vizzop. Built in Aotearoa, New Zealand.</p>
+  <p>info@getvizzop.com</p>
+</footer>
+
+</body>
+</html>
