@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vizzop.com/sitemap.xml
