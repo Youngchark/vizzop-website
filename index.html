@@ -75,6 +75,15 @@
       background: rgba(8,8,8,0.55);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    nav.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
     .nav-logo {
       font-family: 'Alfa Slab One', serif;
@@ -1490,10 +1499,13 @@
 </footer>
 
 <script>
-  // ── Parallax wordmark
+  // ── Parallax wordmark + scroll-aware nav (hidden at top, appears on scroll)
   const wm = document.getElementById('wm');
+  const navEl = document.querySelector('nav');
   window.addEventListener('scroll', () => {
     wm.style.transform = `translateX(${-window.scrollY * 0.28}px)`;
+    if (window.scrollY > 80) navEl.classList.add('scrolled');
+    else navEl.classList.remove('scrolled');
   }, { passive: true });
 
   // ── Popup card (slides in after load)
