@@ -1497,13 +1497,12 @@
 </footer>
 
 <script>
-  // ── Parallax wordmark + scroll-aware nav (hidden at top, appears on scroll)
+  // ── Scroll-aware nav (transparent at top, frosted background on scroll)
   const wm = document.getElementById('wm');
   const navEl = document.querySelector('nav');
   window.addEventListener('scroll', () => {
-    wm.style.transform = `translateX(${-window.scrollY * 0.28}px)`;
-    if (window.scrollY > 80) navEl.classList.add('scrolled');
-    else navEl.classList.remove('scrolled');
+    if (wm) wm.style.transform = `translateX(${-window.scrollY * 0.28}px)`;
+    if (navEl) navEl.classList.toggle('scrolled', window.scrollY > 80);
   }, { passive: true });
 
   // ── Popup card (slides in after load)
